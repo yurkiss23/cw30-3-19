@@ -90,5 +90,30 @@ namespace Photoshop
         {
             MessageBox.Show("Find!");
         }
+
+        private void btnMirrorV_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Mirror Vertical");
+        }
+
+        private void btnMirrorH_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Mirror Horizontal");
+        }
+
+        private void btnFlipR_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Flip Right");
+        }
+
+        private void btnFlipL_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Flip Left");
+        }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show("Select View");
+        }
     }
 }
