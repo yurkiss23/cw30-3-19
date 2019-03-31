@@ -78,7 +78,8 @@
                             <TextBox x:Name="txtFind" Width="100" HorizontalAlignment="Stretch"
                                      VerticalAlignment="Center"/>
                             <Button x:Name="btnFind" Content="Find" Margin=" 10,0,0,0" Width="50"
-                                    HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                                    HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                    Click="btnFind_Click"/>
                         </ToolBar>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="40">

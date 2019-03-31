@@ -85,5 +85,10 @@ namespace Photoshop
                 MessageBox.Show("Other Error: {0}", ex.Message);
             }
         }
+
+        private void btnFind_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Find!");
+        }
     }
 }
