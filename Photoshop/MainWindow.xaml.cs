@@ -50,7 +50,7 @@ namespace Photoshop
                     this.myInkCanvas.EditingMode = InkCanvasEditingMode.Ink;
                     break;
                 case "Erase Mode":
-                    this.myInkCanvas.EditingMode = InkCanvasEditingMode.EraseByStroke;
+                    this.myInkCanvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
                     break;
                 case "Select Mode":
                     this.myInkCanvas.EditingMode = InkCanvasEditingMode.Select;
