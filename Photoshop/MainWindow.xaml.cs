@@ -26,14 +26,20 @@ namespace Photoshop
         {
             InitializeComponent();
             this.comboColors.SelectedIndex = 0;
+            this.comboSize.SelectedIndex = 0;
         }
 
         private void ComboColors_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string colorToUse =
-                (this.comboColors.SelectedItem as StackPanel).Tag.ToString();
-            this.myInkCanvas.DefaultDrawingAttributes.Color =
-                (Color)ColorConverter.ConvertFromString(colorToUse);
+            string colorToUse = (this.comboColors.SelectedItem as StackPanel).Tag.ToString();
+            this.myInkCanvas.DefaultDrawingAttributes.Color = (Color)ColorConverter.ConvertFromString(colorToUse);
+        }
+
+        private void ComboSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int sizeToUse = Int32.Parse((this.comboSize.SelectedItem as StackPanel).Tag.ToString());
+            this.myInkCanvas.DefaultDrawingAttributes.Height
+                = this.myInkCanvas.DefaultDrawingAttributes.Width = sizeToUse;
         }
 
         private void RadioButtonClick(object sender, RoutedEventArgs e)

@@ -5,56 +5,76 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Photoshop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="FotoshoPP" Height="450" Width="1000">
     <Grid>
         <TabControl x:Name="myTabSystem" Margin="8">
             <TabItem x:Name="tabInk" Header="Ink API">
                 <DockPanel Background="#FFE5E5E5">
-                    <ToolBar DockPanel.Dock="Top" x:Name="inkToolbar" Height="60">
+                    <ToolBar DockPanel.Dock="Top" x:Name="inkToolbar" Height="40">
                         <Border Margin="0,2,0,3" Width="300">
                             <Grid>
                                 <RadioButton x:Name="inkRadio" 
                                              Content="Ink Mode"
                                              GroupName="InkMode"
-                                             Margin="0,0,200,0"
+                                             Margin="0,0,200,0" VerticalContentAlignment="Center"
                                              IsChecked="True" Click="RadioButtonClick"/>
                                 <RadioButton x:Name="eraseRadio" 
                                              Content="Erase Mode"
-                                             GroupName="InkMode"
+                                             GroupName="InkMode" VerticalContentAlignment="Center"
                                              Margin="100,0" Click="RadioButtonClick"/>
                                 <RadioButton x:Name="selectRadio" 
                                              Content="Select Mode"
-                                             GroupName="InkMode"
+                                             GroupName="InkMode" VerticalContentAlignment="Center"
                                              Margin="200,0,0,0" Click="RadioButtonClick"/>
                             </Grid>
                         </Border>
                         <Separator/>
-                        <ComboBox x:Name="comboColors" Width="200"
-                                  SelectionChanged="ComboColors_SelectionChanged">
+                        <ComboBox x:Name="comboColors" Width="100" SelectionChanged="ComboColors_SelectionChanged">
                             <StackPanel Orientation="Horizontal" Tag="Red">
-                                <Ellipse Fill="Red" Height="40" Width="40"/>
-                                <Label FontSize="20" HorizontalAlignment="Center"
+                                <Ellipse Fill="Red" Height="20" Width="20"/>
+                                <Label FontSize="16" HorizontalAlignment="Center"
                                        VerticalAlignment="Center" Content="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Tag="Green">
-                                <Ellipse Fill="Green" Height="40" Width="40"/>
-                                <Label FontSize="20" HorizontalAlignment="Center"
+                                <Ellipse Fill="Green" Height="20" Width="20"/>
+                                <Label FontSize="16" HorizontalAlignment="Center"
                                        VerticalAlignment="Center" Content="Green"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Tag="Blue">
-                                <Ellipse Fill="Blue" Height="40" Width="40" />
-                                <Label FontSize="20" HorizontalAlignment="Center"
+                                <Ellipse Fill="Blue" Height="20" Width="20" />
+                                <Label FontSize="16" HorizontalAlignment="Center"
                                        VerticalAlignment="Center" Content="Blue" />
                             </StackPanel>
                         </ComboBox>
+                        <ComboBox x:Name="comboSize" Width="50" SelectionChanged="ComboSize_SelectionChanged">
+                            <StackPanel Orientation="Horizontal" Tag="10">
+                                <Rectangle Fill="Black" Height="10" Width="30"/>
+                                <Label FontSize="16" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" Content="10"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Tag="14">
+                                <Rectangle Fill="Black" Height="16" Width="30"/>
+                                <Label FontSize="16" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" Content="14"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Tag="18">
+                                <Rectangle Fill="Black" Height="18" Width="30"/>
+                                <Label FontSize="16" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" Content="18" />
+                            </StackPanel>
+                        </ComboBox>
+                        <Separator/>
+                    </ToolBar>
+                    <ToolBar DockPanel.Dock="Top" x:Name="saveToolbar" Height="40">
                         <Button x:Name="btnSave" HorizontalAlignment="Stretch" 
                                 VerticalAlignment="Stretch" Width="75"
                                 Content="Save Image" Click="BtnSave_Click"/>
                         <Button x:Name="btnLoad" HorizontalAlignment="Stretch" 
                                 VerticalAlignment="Stretch" Width="75"
                                 Content="Load Image" Click="BtnLoad_Click"/>
+                        
                     </ToolBar>
-                    <InkCanvas x:Name="myInkCanvas" Background="#ff4ae6d6"/>
+                    <InkCanvas x:Name="myInkCanvas" Background="#00000000"/>
                 </DockPanel>
             </TabItem>
         </TabControl>
