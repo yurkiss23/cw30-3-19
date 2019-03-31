@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Photoshop"
         mc:Ignorable="d"
-        Title="FotoshoPP" Height="450" Width="1000">
+        Title="FotoshoPP" Height="450" Width="900">
     <Grid>
         <TabControl x:Name="myTabSystem" Margin="8">
             <TabItem x:Name="tabInk" Header="Ink API">
@@ -68,15 +68,20 @@
                         </ToolBar>
                         <ToolBar x:Name="saveToolbar" Height="40">
                             <Button x:Name="btnSave" HorizontalAlignment="Stretch" 
-                                VerticalAlignment="Stretch" Width="75"
+                                VerticalAlignment="Center"  Width="75"
                                 Content="Save Image" Click="BtnSave_Click"/>
                             <Button x:Name="btnLoad" HorizontalAlignment="Stretch" 
-                                VerticalAlignment="Stretch" Width="75"
+                                VerticalAlignment="Center" Width="75"
                                 Content="Load Image" Click="BtnLoad_Click"/>
+                        </ToolBar>
+                        <ToolBar x:Name="findToolbar" Height="40">
+                            <TextBox x:Name="txtFind" Width="100" HorizontalAlignment="Stretch"
+                                     VerticalAlignment="Center"/>
+                            <Button x:Name="btnFind" Content="Find" Margin=" 10,0,0,0" Width="50"
+                                    HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
                         </ToolBar>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="40">
-                        
                     </StackPanel>
                     <InkCanvas x:Name="myInkCanvas" Background="#00000000"/>
                 </DockPanel>
