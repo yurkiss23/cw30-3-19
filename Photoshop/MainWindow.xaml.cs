@@ -67,6 +67,7 @@ namespace Photoshop
             {
                 using (FileStream fs = new FileStream(sfd.FileName, FileMode.Create))
                 {
+                    //ImageBrush tmp = (ImageBrush)myInkCanvas.Background;
                     this.myInkCanvas.Strokes.Save(fs);
                 }
             }
@@ -104,7 +105,24 @@ namespace Photoshop
 
         private void BtnLoadImg_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "Файли зображень(*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+                if (ofd.ShowDialog() == true)
+                {
+                    BitmapImage img = new BitmapImage(new Uri(ofd.FileName));
+                    myInkCanvas.Background = new ImageBrush(img);
+                }
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show("Error file not found {0}", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Other Error: {0}", ex.Message);
+            }
         }
 
         private void btnFind_Click(object sender, RoutedEventArgs e)
