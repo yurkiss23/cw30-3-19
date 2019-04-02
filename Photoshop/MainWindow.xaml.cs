@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -60,9 +61,12 @@ namespace Photoshop
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            using (FileStream fs = new FileStream("StrokeData.bin", FileMode.Create))
+            //SaveFileDialog sfd = new SaveFileDialog();
+            using (FileStream fs = new FileStream("StrokeData.jpg", FileMode.Create))
             {
-                this.myInkCanvas.Strokes.Save(fs);
+                //this.myInkCanvas.Strokes.Save(fs);
+                BitmapEncoder bEnc = new BmpBitmapEncoder();
+                bEnc.Save(fs);
             }
         }
 
@@ -84,6 +88,16 @@ namespace Photoshop
             {
                 MessageBox.Show("Other Error: {0}", ex.Message);
             }
+        }
+
+        private void BtnSaveImg_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnLoadImg_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void btnFind_Click(object sender, RoutedEventArgs e)

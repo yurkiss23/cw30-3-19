@@ -70,10 +70,16 @@
                         <ToolBar x:Name="saveToolbar" Height="40">
                             <Button x:Name="btnSave" HorizontalAlignment="Stretch" 
                                 VerticalAlignment="Center"  Width="75"
-                                Content="Save Image" Click="BtnSave_Click"/>
+                                Content="Save Project" Click="BtnSave_Click"/>
                             <Button x:Name="btnLoad" HorizontalAlignment="Stretch" 
                                 VerticalAlignment="Center" Width="75"
-                                Content="Load Image" Click="BtnLoad_Click"/>
+                                Content="Load Project" Click="BtnLoad_Click"/>
+                            <Button x:Name="btnSaveImg" HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Center"  Width="75"
+                                Content="Save Image" Click="BtnSaveImg_Click"/>
+                            <Button x:Name="btnLoadImg" HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Center" Width="75"
+                                Content="Load Image" Click="BtnLoadImg_Click"/>
                         </ToolBar>
                         <ToolBar x:Name="findToolbar" Height="40">
                             <TextBox x:Name="txtFind" Width="100" HorizontalAlignment="Stretch"
