@@ -95,7 +95,7 @@
                                     Click="btnFind_Click"/>
                         </ToolBar>
                     </StackPanel>
-                    <InkCanvas x:Name="myInkCanvas" Background="#00000000"/>
+                    <InkCanvas x:Name="myInkCanvas" Background="White"/>
                 </DockPanel>
             </TabItem>
             <TabItem x:Name="tabAlbum" Header="Album API">

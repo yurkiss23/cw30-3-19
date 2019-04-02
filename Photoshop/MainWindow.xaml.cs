@@ -67,7 +67,6 @@ namespace Photoshop
             {
                 using (FileStream fs = new FileStream(sfd.FileName, FileMode.Create))
                 {
-                    //ImageBrush tmp = (ImageBrush)myInkCanvas.Background;
                     this.myInkCanvas.Strokes.Save(fs);
                 }
             }
@@ -100,7 +99,26 @@ namespace Photoshop
 
         private void BtnSaveImg_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter= "Файли зображень(*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+                if (sfd.ShowDialog() == true)
+                {
+                    RenderTargetBitmap rtb = new RenderTargetBitmap((int)myInkCanvas.ActualWidth, (int)myInkCanvas.ActualHeight, 0, 0, PixelFormats.Default);
+                    rtb.Render(myInkCanvas);
+                    JpegBitmapEncoder jEnc = new JpegBitmapEncoder();
+                    jEnc.Frames.Add(BitmapFrame.Create(rtb));
+                    using (FileStream fs = new FileStream(sfd.FileName, FileMode.Create))
+                    {
+                        jEnc.Save(fs);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Other Error: {0}", ex.Message);
+            }
         }
 
         private void BtnLoadImg_Click(object sender, RoutedEventArgs e)
