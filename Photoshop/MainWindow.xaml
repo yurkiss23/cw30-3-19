@@ -68,18 +68,26 @@
                             <Separator/>
                         </ToolBar>
                         <ToolBar x:Name="saveToolbar" Height="40">
-                            <Button x:Name="btnSave" HorizontalAlignment="Stretch" 
-                                VerticalAlignment="Center"  Width="75"
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+                                    <Button x:Name="btnSave" HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Center" Width="75" FontSize="10"
                                 Content="Save Project" Click="BtnSave_Click"/>
-                            <Button x:Name="btnLoad" HorizontalAlignment="Stretch" 
-                                VerticalAlignment="Center" Width="75"
+                                    <Button x:Name="btnLoad" HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Center" Width="75" FontSize="10"
                                 Content="Load Project" Click="BtnLoad_Click"/>
-                            <Button x:Name="btnSaveImg" HorizontalAlignment="Stretch" 
-                                VerticalAlignment="Center"  Width="75"
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button x:Name="btnSaveImg" HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Center" Width="75" FontSize="10"
                                 Content="Save Image" Click="BtnSaveImg_Click"/>
-                            <Button x:Name="btnLoadImg" HorizontalAlignment="Stretch" 
-                                VerticalAlignment="Center" Width="75"
+                                    <Button x:Name="btnLoadImg" HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Center" Width="75" FontSize="10"
                                 Content="Load Image" Click="BtnLoadImg_Click"/>
+                                </StackPanel>
+                            </StackPanel>
+                            
+                            
                         </ToolBar>
                         <ToolBar x:Name="findToolbar" Height="40">
                             <TextBox x:Name="txtFind" Width="100" HorizontalAlignment="Stretch"
