@@ -70,17 +70,21 @@ namespace Photoshop
                     this.myInkCanvas.Strokes.Save(fs);
                 }
             }
-            
         }
 
         private void BtnLoad_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                using (FileStream fs = new FileStream("StrokeData.bin", FileMode.Open))
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "Файли проекта(*.bin) | *.bin";
+                if (ofd.ShowDialog() == true)
                 {
-                    StrokeCollection stroke = new StrokeCollection(fs);
-                    this.myInkCanvas.Strokes = stroke;
+                    using (FileStream fs = new FileStream(ofd.FileName, FileMode.Open))
+                    {
+                        StrokeCollection stroke = new StrokeCollection(fs);
+                        this.myInkCanvas.Strokes = stroke;
+                    }
                 }
             }
             catch (FileNotFoundException ex)
