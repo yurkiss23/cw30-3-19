@@ -61,13 +61,16 @@ namespace Photoshop
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            //SaveFileDialog sfd = new SaveFileDialog();
-            using (FileStream fs = new FileStream("StrokeData.jpg", FileMode.Create))
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter= "Файли проекта(*.bin) | *.bin";
+            if (sfd.ShowDialog() == true)
             {
-                //this.myInkCanvas.Strokes.Save(fs);
-                BitmapEncoder bEnc = new BmpBitmapEncoder();
-                bEnc.Save(fs);
+                using (FileStream fs = new FileStream(sfd.FileName, FileMode.Create))
+                {
+                    this.myInkCanvas.Strokes.Save(fs);
+                }
             }
+            
         }
 
         private void BtnLoad_Click(object sender, RoutedEventArgs e)

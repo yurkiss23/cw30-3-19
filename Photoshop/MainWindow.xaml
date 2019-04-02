@@ -86,8 +86,6 @@
                                 Content="Load Image" Click="BtnLoadImg_Click"/>
                                 </StackPanel>
                             </StackPanel>
-                            
-                            
                         </ToolBar>
                         <ToolBar x:Name="findToolbar" Height="40">
                             <TextBox x:Name="txtFind" Width="100" HorizontalAlignment="Stretch"
