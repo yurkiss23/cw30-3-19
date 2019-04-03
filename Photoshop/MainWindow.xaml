@@ -127,7 +127,6 @@
                         </TreeViewItem>
                     </TreeView>
                     <Canvas x:Name="myCanvas" Background="#00000000"/>
-                    <!--InkCanvas x:Name="myInkCanvas" Background="#00000000"/-->
                 </DockPanel>
             </TabItem>
         </TabControl>

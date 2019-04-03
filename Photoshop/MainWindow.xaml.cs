@@ -149,11 +149,6 @@ namespace Photoshop
             }
         }
 
-        private void btnFind_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Find!");
-        }
-
         private void btnMirrorV_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Mirror Vertical");
