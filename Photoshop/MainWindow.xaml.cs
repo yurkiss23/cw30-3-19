@@ -59,6 +59,12 @@ namespace Photoshop
             }
         }
 
+        private void BtnNew_Click(object sender, RoutedEventArgs e)
+        {
+            this.myInkCanvas.Background = new SolidColorBrush(Colors.White);
+            this.myInkCanvas.Strokes = new StrokeCollection();
+        }
+
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();

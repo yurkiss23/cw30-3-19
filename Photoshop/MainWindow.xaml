@@ -68,21 +68,24 @@
                             <Separator/>
                         </ToolBar>
                         <ToolBar x:Name="saveToolbar" Height="40">
+                            <Button x:Name="btnNew" HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Center" Width="30" FontSize="10"
+                                        Content="New" Click="BtnNew_Click"/>
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                 <StackPanel Orientation="Horizontal">
                                     <Button x:Name="btnSave" HorizontalAlignment="Stretch" 
-                                VerticalAlignment="Center" Width="75" FontSize="10"
+                                VerticalAlignment="Center" Width="65" FontSize="10"
                                 Content="Save Project" Click="BtnSave_Click"/>
                                     <Button x:Name="btnLoad" HorizontalAlignment="Stretch" 
-                                VerticalAlignment="Center" Width="75" FontSize="10"
+                                VerticalAlignment="Center" Width="65" FontSize="10"
                                 Content="Load Project" Click="BtnLoad_Click"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <Button x:Name="btnSaveImg" HorizontalAlignment="Stretch" 
-                                VerticalAlignment="Center" Width="75" FontSize="10"
+                                VerticalAlignment="Center" Width="65" FontSize="10"
                                 Content="Save Image" Click="BtnSaveImg_Click"/>
                                     <Button x:Name="btnLoadImg" HorizontalAlignment="Stretch" 
-                                VerticalAlignment="Center" Width="75" FontSize="10"
+                                VerticalAlignment="Center" Width="65" FontSize="10"
                                 Content="Load Image" Click="BtnLoadImg_Click"/>
                                 </StackPanel>
                             </StackPanel>
