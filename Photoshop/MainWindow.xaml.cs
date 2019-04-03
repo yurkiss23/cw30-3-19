@@ -219,7 +219,21 @@ namespace Photoshop
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show("Select View");
+            switch (viewList.SelectedIndex)
+            {
+                case 0:
+                    MessageBox.Show("List");
+                    break;
+                case 1:
+                    MessageBox.Show("Small");
+                    break;
+                case 2:
+                    MessageBox.Show("Middle");
+                    break;
+                case 3:
+                    MessageBox.Show("Big");
+                    break;
+            }
         }
     }
 }
