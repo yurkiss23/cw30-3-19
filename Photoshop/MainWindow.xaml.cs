@@ -149,6 +149,49 @@ namespace Photoshop
             }
         }
 
+        private void TabAlbum_Loaded(object sender, RoutedEventArgs e)
+        {
+            foreach(DriveInfo drive in DriveInfo.GetDrives())
+            {
+                TreeViewItem item = new TreeViewItem();
+                item.Tag = drive;
+                item.Header = drive.ToString();
+                item.Items.Add("*");
+                TrwDrv.Items.Add(item);
+            }
+        }
+
+        private void trwDrv_Expanded(object sender, RoutedEventArgs e)
+        {
+            TreeViewItem item = (TreeViewItem)e.OriginalSource;
+            item.Items.Clear();
+            DirectoryInfo dir;
+            if (item.Tag is DriveInfo)
+            {
+                DriveInfo drive = (DriveInfo)item.Tag;
+                dir = drive.RootDirectory;
+            }
+            else
+            {
+                dir = (DirectoryInfo)item.Tag;
+            }
+            try
+            {
+                foreach (DirectoryInfo subDir in dir.GetDirectories())
+                {
+                    TreeViewItem nItem = new TreeViewItem();
+                    nItem.Tag = subDir;
+                    nItem.Header = subDir.ToString();
+                    nItem.Items.Add("*");
+                    item.Items.Add(nItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void btnMirrorV_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Mirror Vertical");
