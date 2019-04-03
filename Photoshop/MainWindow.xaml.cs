@@ -192,6 +192,11 @@ namespace Photoshop
             }
         }
 
+        private void trwDrv_Selected(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Item Selected");
+        }
+
         private void btnMirrorV_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Mirror Vertical");

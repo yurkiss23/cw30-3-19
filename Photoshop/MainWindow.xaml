@@ -118,16 +118,23 @@
                         </ToolBar>
                     </StackPanel>
                     <TreeView x:Name="TrwDrv" DockPanel.Dock="Left" Background="LightGray" Width="150"
-                              TreeViewItem.Expanded="trwDrv_Expanded">
-                        <!--<TreeViewItem x:Name="treeViewItem" Header="c:\" IsExpanded="True">
-                            <TreeViewItem Header="Users"/>
-                            <TreeViewItem Header="Windows"/>
-                        </TreeViewItem>
-                        <TreeViewItem Header="d:\" IsExpanded="True">
-                            <TreeViewItem Header="itstep"/>
-                        </TreeViewItem>-->
+                              TreeViewItem.Expanded="trwDrv_Expanded"
+                              TreeViewItem.Selected="trwDrv_Selected">
                     </TreeView>
-                    <Canvas x:Name="myCanvas" Background="#00000000"/>
+                    <Canvas x:Name="myCanvas" Background="#00000000">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="80"/>
+                                <RowDefinition Height="80"/>
+                                <RowDefinition Height="80"/>
+                                <RowDefinition Height="80"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Image Source="c:\Users\yurkiss\source\repos\Photoshop\Photoshop\123.jpg"/>
+                            </StackPanel>
+                        </Grid>
+                        
+                    </Canvas>
                 </DockPanel>
             </TabItem>
         </TabControl>
