@@ -125,13 +125,13 @@
                               TreeViewItem.Selected="trwDrv_Selected">
                     </TreeView>
                     <ScrollViewer x:Name="ScrView" VerticalScrollBarVisibility="Visible">
-                        <WrapPanel x:Name="wpGallery" ItemWidth="80">
+                        <WrapPanel x:Name="wpGallery" ItemWidth="80" Cursor="Hand" MouseLeftButtonDown="WpGallery_MouseLeftButtonDown">
                             <Image Source="c:\Users\yurkiss\source\repos\Photoshop\Photoshop\123.jpg"/>
                             <Image Source="c:\Users\yurkiss\source\repos\Photoshop\Photoshop\123.jpg"/>
                         </WrapPanel>
                     </ScrollViewer>
-                    
-                    
+
+
                     <!--<Canvas x:Name="CanvasSmall" Background="#00000000"
                             IsEnabled="False"
                             Selector.SelectionChanged="Small_SelectionChanged">
@@ -177,7 +177,9 @@
                                 <RowDefinition Height="80"/>
                             </Grid.RowDefinitions>
                             <StackPanel Grid.Row="0" Orientation="Horizontal">
-                                --><!--<Image Source="c:\Users\work\source\repos\Photoshop\Photoshop\123.jpg"/>--><!--
+                                -->
+                    <!--<Image Source="c:\Users\work\source\repos\Photoshop\Photoshop\123.jpg"/>-->
+                    <!--
                             </StackPanel>
                         </Grid>
                     </Canvas>-->

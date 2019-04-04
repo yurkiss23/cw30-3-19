@@ -268,5 +268,14 @@ namespace Photoshop
                     break;
             }
         }
+
+        private void WpGallery_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            wpGallery.Children.Clear();
+            wpGallery.ItemWidth = wpGallery.Width;
+            Image img = (Image)e.OriginalSource;
+            img.Stretch = Stretch.Uniform;
+            wpGallery.Children.Add(img);
+        }
     }
 }
