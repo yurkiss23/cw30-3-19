@@ -125,9 +125,9 @@
                               TreeViewItem.Selected="trwDrv_Selected">
                     </TreeView>
 
-                    <WrapPanel ItemWidth="80">
-                        <Image Source="c:\Users\work\source\repos\Photoshop\Photoshop\123.jpg"/>
-                        <Image Source="c:\Users\work\source\repos\Photoshop\Photoshop\123.jpg"/>
+                    <WrapPanel x:Name="wpGallery" ItemWidth="80">
+                        <Image Source="c:\Users\yurkiss\source\repos\Photoshop\Photoshop\123.jpg"/>
+                        <Image Source="c:\Users\yurkiss\source\repos\Photoshop\Photoshop\123.jpg"/>
                     </WrapPanel>
                     
                     <!--<Canvas x:Name="CanvasSmall" Background="#00000000"

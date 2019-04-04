@@ -23,6 +23,7 @@ namespace Photoshop
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string Path { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -175,6 +176,9 @@ namespace Photoshop
             {
                 dir = (DirectoryInfo)item.Tag;
             }
+
+            Path = dir.FullName.ToString();
+
             try
             {
                 foreach (DirectoryInfo subDir in dir.GetDirectories())
@@ -194,22 +198,33 @@ namespace Photoshop
 
         private void trwDrv_Selected(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Item Selected");
-            TreeViewItem item = (TreeViewItem)sender;
+            wpGallery.Children.Clear();
+            TreeViewItem item = (TreeViewItem)e.OriginalSource;
             try
             {
-                foreach (string file in Directory.GetFiles(item.Header.ToString()))
+                if (item.Tag is DriveInfo)
                 {
-                    MessageBox.Show(file);
+                    Path = ((DriveInfo)item.Tag).RootDirectory.FullName.ToString();
+                }
+                else
+                {
+                    Path = ((DirectoryInfo)item.Tag).FullName.ToString();
+                }
+                foreach (string file in Directory.GetFiles(Path))
+                {
+                    if (file.Substring(file.LastIndexOf('.'), 4).ToLower() == ".jpg")
+                    {
+                        Image img = new Image();
+                        img.Stretch = Stretch.Uniform;
+                        img.Source = new BitmapImage(new Uri(file));
+                        wpGallery.Children.Add(img);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
-            
-
-            
         }
 
         private void btnMirrorV_Click(object sender, RoutedEventArgs e)
