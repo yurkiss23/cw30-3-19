@@ -225,6 +225,7 @@ namespace Photoshop
             {
                 //MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void btnMirrorV_Click(object sender, RoutedEventArgs e)
