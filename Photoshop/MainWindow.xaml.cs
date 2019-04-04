@@ -195,6 +195,21 @@ namespace Photoshop
         private void trwDrv_Selected(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Item Selected");
+            TreeViewItem item = (TreeViewItem)sender;
+            try
+            {
+                foreach (string file in Directory.GetFiles(item.Header.ToString()))
+                {
+                    MessageBox.Show(file);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+
+            
         }
 
         private void btnMirrorV_Click(object sender, RoutedEventArgs e)
