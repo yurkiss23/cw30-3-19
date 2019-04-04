@@ -225,7 +225,6 @@ namespace Photoshop
             {
                 //MessageBox.Show(ex.Message);
             }
-            
         }
 
         private void btnMirrorV_Click(object sender, RoutedEventArgs e)
@@ -252,17 +251,20 @@ namespace Photoshop
         {
             switch (viewList.SelectedIndex)
             {
+                //case 0:
+                //    MessageBox.Show("List");
+                //    break;
                 case 0:
-                    MessageBox.Show("List");
+                    //MessageBox.Show("Small");
+                    wpGallery.ItemWidth = 40;
                     break;
                 case 1:
-                    MessageBox.Show("Small");
+                    //MessageBox.Show("Middle");
+                    wpGallery.ItemWidth = 80;
                     break;
                 case 2:
-                    MessageBox.Show("Middle");
-                    break;
-                case 3:
-                    MessageBox.Show("Big");
+                    //MessageBox.Show("Big");
+                    wpGallery.ItemWidth = 120;
                     break;
             }
         }

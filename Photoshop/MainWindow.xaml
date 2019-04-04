@@ -105,9 +105,9 @@
                                     Click="btnMirrorV_Click"/>
                             <Separator/>
                             <ListBox x:Name="viewList" SelectionChanged="listView_SelectionChanged">
-                                <ListBoxItem Width="100">
+                                <!--<ListBoxItem Width="100">
                                     <Label FontSize="14" Content="List"/>
-                                </ListBoxItem>
+                                </ListBoxItem>-->
                                 <ListBoxItem Width="100">
                                     <Label FontSize="14" Content="Small"/>
                                 </ListBoxItem>
