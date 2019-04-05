@@ -95,14 +95,30 @@
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="40"
                                 Background="LightGray">
                         <ToolBar x:Name="editToolbar" Height="40">
-                            <Button x:Name="btnFlipL" Height="30" Width="30" Content="FL"
-                                    Click="btnFlipL_Click"/>
-                            <Button x:Name="btnFlipR" Height="30" Width="30" Content="FR"
-                                    Click="btnFlipR_Click"/>
-                            <Button x:Name="btnMirrorH" Height="30" Width="30" Content="MH"
-                                    Click="btnMirrorH_Click"/>
-                            <Button x:Name="btnMirrorV" Height="30" Width="30" Content="MV"
-                                    Click="btnMirrorV_Click"/>
+                            <Button x:Name="btnFlipL" Height="30" Width="30"
+                                    Click="btnFlipL_Click">
+                                <Button.Content>
+                                    <Image Source="C:\Users\work\source\repos\photoshop\Photoshop\bin\Debug\rotateL.png"/>
+                                </Button.Content>
+                            </Button>
+                            <Button x:Name="btnFlipR" Height="30" Width="30"
+                                    Click="btnFlipR_Click">
+                                <Button.Content>
+                                    <Image Source="C:\Users\work\source\repos\photoshop\Photoshop\bin\Debug\rotateR.png"/>
+                                </Button.Content>
+                            </Button>
+                            <Button x:Name="btnMirrorH" Height="30" Width="30"
+                                    Click="btnMirrorH_Click">
+                                <Button.Content>
+                                    <Image Source="C:\Users\work\source\repos\photoshop\Photoshop\bin\Debug\arrowH.png"/>
+                                </Button.Content>
+                            </Button>
+                            <Button x:Name="btnMirrorV" Height="30" Width="30"
+                                    Click="btnMirrorV_Click">
+                                <Button.Content>
+                                    <Image Source="C:\Users\work\source\repos\photoshop\Photoshop\bin\Debug\arrowV.png"/>
+                                </Button.Content>
+                            </Button>
                             <Separator/>
                             <ListBox x:Name="viewList" SelectionChanged="listView_SelectionChanged">
                                 <!--<ListBoxItem Width="100">
