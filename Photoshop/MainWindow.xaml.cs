@@ -230,29 +230,54 @@ namespace Photoshop
 
         private void btnMirrorV_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Mirror Vertical");
+            //MessageBox.Show("Mirror Vertical");
+            Image img = (Image)wpGallery.Children[wpGallery.Children.Count - 1];
+            ScaleTransform rt = new ScaleTransform() { ScaleY = -1 };
+            img.RenderTransformOrigin = new Point(0.5, 0.5);
+            img.RenderTransform = rt;
+            wpGallery.Children.Clear();
+            wpGallery.ItemWidth = wpGallery.Width;
+            img.Stretch = Stretch.Uniform;
+            wpGallery.Children.Add(img);
         }
 
         private void btnMirrorH_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Mirror Horizontal");
+            //MessageBox.Show("Mirror Horizontal");
+            Image img = (Image)wpGallery.Children[wpGallery.Children.Count - 1];
+            ScaleTransform rt = new ScaleTransform() { ScaleX = -1 };
+            img.RenderTransformOrigin = new Point(0.5, 0.5);
+            img.RenderTransform = rt;
+            wpGallery.Children.Clear();
+            wpGallery.ItemWidth = wpGallery.Width;
+            img.Stretch = Stretch.Uniform;
+            wpGallery.Children.Add(img);
         }
 
         private void btnFlipR_Click(object sender, RoutedEventArgs e)
         {
             //MessageBox.Show("Flip Right");
-            Image img = (Image)wpGallery.Children[0];
-            wpGallery.Children.Clear();
-            RotateTransform rt = new RotateTransform(90, Height/1.5, Height/2);
+            Image img = (Image)wpGallery.Children[wpGallery.Children.Count - 1];
+            RotateTransform rt = new RotateTransform(90);
+            img.RenderTransformOrigin = new Point(0.5, 0.5);
             img.RenderTransform = rt;
-            //wpGallery.ItemWidth = wpGallery.Width;
+            wpGallery.Children.Clear();
+            wpGallery.ItemWidth = wpGallery.Width;
             img.Stretch = Stretch.Uniform;
             wpGallery.Children.Add(img);
         }
 
         private void btnFlipL_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Flip Left");
+            //MessageBox.Show("Flip Left");
+            Image img = (Image)wpGallery.Children[wpGallery.Children.Count - 1];
+            RotateTransform rt = new RotateTransform(-90);
+            img.RenderTransformOrigin = new Point(0.5, 0.5);
+            img.RenderTransform = rt;
+            wpGallery.Children.Clear();
+            wpGallery.ItemWidth = wpGallery.Width;
+            img.Stretch = Stretch.Uniform;
+            wpGallery.Children.Add(img);
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
