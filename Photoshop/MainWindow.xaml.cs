@@ -199,6 +199,7 @@ namespace Photoshop
         private void trwDrv_Selected(object sender, RoutedEventArgs e)
         {
             wpGallery.Children.Clear();
+            wpGallery.ItemWidth = 80;
             TreeViewItem item = (TreeViewItem)e.OriginalSource;
             try
             {
@@ -239,7 +240,14 @@ namespace Photoshop
 
         private void btnFlipR_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Flip Right");
+            //MessageBox.Show("Flip Right");
+            Image img = (Image)wpGallery.Children[0];
+            RotateTransform rt = new RotateTransform(90, Height/2, Height/2);
+            img.RenderTransform = rt;
+            wpGallery.Children.Clear();
+            //wpGallery.ItemWidth = wpGallery.Width;
+            img.Stretch = Stretch.Uniform;
+            wpGallery.Children.Add(img);
         }
 
         private void btnFlipL_Click(object sender, RoutedEventArgs e)
